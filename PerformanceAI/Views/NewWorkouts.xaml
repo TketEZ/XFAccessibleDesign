@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PerformanceAI.Views.NewWorkouts"
+    Title="New Workout">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                Spacing="10"
+                Margin="10">
+                <Button
+                    x:Name="ScanButton"
+                    Clicked="ScanButton_Clicked"
+                    Text="Scan for devices"
+                    BackgroundColor="green"
+                    TextColor="white"
+                    Padding="10"
+                    FontAttributes="Bold"/>
+                <Button
+                    x:Name="StatusButton"
+                    Clicked="StatusButton_Clicked"
+                    Text="Bluetooth Status"
+                    TextColor="White"
+                    Padding="10"
+                    BackgroundColor="Blue"/>
+            </StackLayout>
+
+            <StackLayout>
+                <ListView
+                    x:Name="DevicesListView"
+                    ItemSelected="DevicesListView_ItemSelected"
+                    ItemsSource="{Binding devices}"
+                    SeparatorVisibility="Default"
+                    SeparatorColor="red">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+		      	                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">	
+			     	                    <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+			        	                    <Label
+			        		                    YAlign="Center" 
+			        		                    Font="Medium"
+			        		                    TextColor="Red"
+                                                Text="{Binding Name}" />
+			                            </StackLayout>
+		                             </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

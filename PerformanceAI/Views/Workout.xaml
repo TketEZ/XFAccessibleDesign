@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PerformanceAI.Views.Workout"
+    Title="Workout Page">
+        <StackLayout HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="30">
+
+            <Button
+                x:Name="StartWorkoutButton"
+                Margin="20"
+                Text="Start Workout"
+                Clicked="StartWorkout_Clicked"
+                IsVisible="true"
+                BackgroundColor="green"
+                TextColor="white"
+                FontSize="30"
+                Padding="30"
+                FontAttributes="Bold">
+            </Button>
+
+            <Label
+                x:Name="HeartRateLabel"
+                Text="{Binding HeartRateLbl}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Padding="10"
+                FontSize="60"
+                FontAttributes="Bold"
+                TextColor="OrangeRed">
+            </Label>
+
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                <Label Text="Average Heart rate: " />
+                <Label x:Name="HeartRateAvgLabel"
+                       Text="{Binding HeartRateAvgLbl}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="EndAndExpand"
+                       TextColor="Black" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center">
+                <Label Text="Time: " />
+                <Label x:Name="TimerLabel"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="SpeechRecLbl" Text="Speech Recognition Status: " />
+                <ActivityIndicator x:Name="OnDemandDataIndicator" IsRunning="False" />
+            </StackLayout>
+
+            <Button x:Name="StopWorkoutButton"
+                    Margin="20"
+                    VerticalOptions="EndAndExpand"
+                    Text="Stop Workout"
+                    Clicked="StopWorkoutButton_Clicked"
+                    BackgroundColor="Red"
+                    TextColor="white"
+                    Padding="30"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    IsVisible="false">
+            </Button>
+
+        </StackLayout>
+</ContentPage>

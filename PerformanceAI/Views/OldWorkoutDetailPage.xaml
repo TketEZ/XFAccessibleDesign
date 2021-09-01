@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PerformanceAI.Views.OldWorkoutDetailPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Clicked="OnDelete_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout Margin="20"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="Center">
+            <Label x:Name="FinishDateLbl" Text=" " />
+            <Label x:Name="FinishTimeLbl" Text=" " />
+            <Label x:Name="SessionMaxHrLbl" Text=" " />
+            <Label x:Name="SessionAvgHrLbl" Text=" " />
+            <Label x:Name="SessionMinHrLbl" Text=" " />
+            <Label x:Name="sessionDurationLbl" Text=" " />
+            <Label x:Name="TimeSpentInZone1Lbl" Text=" " />
+            <Label x:Name="TimeSpentInZone2Lbl" Text=" " />
+            <Label x:Name="TimeSpentInZone3Lbl" Text=" " />
+            <Label x:Name="TimeSpentInZone4Lbl" Text=" " />
+            <Label x:Name="TimeSpentInZone5Lbl" Text=" " />
+    </StackLayout>
+</ContentPage>

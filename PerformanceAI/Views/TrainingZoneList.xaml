@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PerformanceAI.Views.TrainingZoneList"
+	xmlns:model="clr-namespace:PerformanceAI.Models">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Add" Clicked="OnItemAdded" />
+	</ContentPage.ToolbarItems>
+	<ListView x:Name="TrainingZonesListView"
+			  Margin="20"
+		      ItemSelected="TrainingZonesListView_ItemSelected"
+		      ItemsSource="{Binding TrainingZoneCollection}"
+		      ItemTapped="TrainingZonesListView_ItemTapped">
+		<ListView.ItemTemplate>
+			<DataTemplate x:DataType="model:TrainingZoneModel">
+				<ViewCell>
+					<StackLayout Margin="20,0,0,0" Orientation="Horizontal" VerticalOptions="Center">
+						<Label Text="Zone:" />
+						<Label Text="{Binding Zone} " VerticalTextAlignment="Center" />
+						<Label Text=", Duration:"/>
+						<Label Text="{Binding durationInMinutes, StringFormat='{0} minutes'}" />
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PerformanceAI.MainPage"
+             Title="Homepage">
+    <StackLayout>
+        <StackLayout
+            Spacing="10"
+            Orientation="Horizontal"
+            VerticalOptions="EndAndExpand"
+            Margin="20">
+
+            <Button
+                x:Name="ButtonOldWorkouts"
+                Margin="10"
+                Padding="10"
+                Text="Old Workouts"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="ButtonOldWorkout_Clicked"
+                BackgroundColor="Blue"
+                TextColor="White"
+                CornerRadius="10">
+            </Button>
+
+            <Label>
+
+            </Label>
+
+            <Button
+                x:Name="ButtonNewWorkouts"
+                Margin="10"
+                Padding="10"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Text="New Workout"
+                Clicked="ButtonNewWorkout_Clicked"
+                BackgroundColor="Red"
+                TextColor="White"
+                CornerRadius="10">
+            </Button>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PerformanceAI.Views.OldWorkouts"
+    xmlns:model="clr-namespace:PerformanceAI.Models">
+
+    <StackLayout>
+
+        <ActivityIndicator IsRunning="{Binding IsLoadingWorkouts}"
+                           IsVisible="{Binding IsLoadingWorkouts}"
+                           Margin="20"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" />
+
+        <Label Text="No workouts yet!"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Margin="10"
+               IsVisible="{Binding HasNoPreviousSessions}" />
+
+        <ListView
+            x:Name="HistoricalWorkoutsListView"
+            ItemsSource="{Binding HistoricalWorkouts}"
+            ItemSelected="ListView_ItemSelected"
+            BackgroundColor="Transparent"
+            SeparatorVisibility="Default"
+            SeparatorColor="Red">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:WorkoutModel">
+                    <ViewCell>
+                        <StackLayout Margin="20, 10, 0, 0"
+                                     Orientation="Horizontal"
+                                     HorizontalOptions="StartAndExpand"
+                                     VerticalOptions="Center">
+                            <Label Text="{Binding ShortDateListView}"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="Start" />
+                            <Label Text="{Binding ShortTimeListView}"
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

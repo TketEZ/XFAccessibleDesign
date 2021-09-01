@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="PerformanceAI.Views.SpeechSettingsConfiguration"
+    Title="Voice feedback Settings">
+
+    <StackLayout>
+        <Button Text="Done"
+                x:Name="FinishedConfigBtn"
+                Clicked="FinishedConfigBtn_Clicked" />
+
+        <!--https://devblogs.microsoft.com/xamarin/great-looking-settings-screens-for-xamarin-forms/-->
+        <TableView Intent="Settings">
+            <TableRoot>
+
+                <TableSection Title="Interval Alerts">
+                    <SwitchCell x:Name="IntervalAlertsSwitch"
+                                Text="Enabled"
+                                On="False"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Interval Frequency (seconds): "
+                                   VerticalOptions="Center"
+                                   Margin="20,0,20,0"/>
+                            <Picker x:Name="IntervalFrequencyPicker"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Title="0"
+                                    TitleColor="Black"
+                                    SelectedIndexChanged="IntervalFrequencyPicker_SelectedIndexChanged"
+                                    Margin="20,5,20,5">
+                                  <Picker.Items>
+                                      <x:String>0</x:String>
+                                      <x:String>5</x:String>
+                                      <x:String>10</x:String>
+                                      <x:String>20</x:String>
+                                      <x:String>30</x:String>
+                                      <x:String>40</x:String>
+                                      <x:String>50</x:String>
+                                      <x:String>60</x:String>
+                                      <x:String>120</x:String>
+                                  </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection Title="Interval Content">
+                    <SwitchCell x:Name="CurrentHrSwitch"
+                                Text="Current heart rate"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <SwitchCell x:Name="AvgHrSwitch"
+                                Text="Avg heart rate"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <SwitchCell x:Name="MaxHrSwitch"
+                                Text="Max heart rate"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <SwitchCell x:Name="MinHrSwitch"
+                                Text="Min heart rate"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <SwitchCell x:Name="DurationSwitch"
+                                Text="Workout duration"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <SwitchCell x:Name="CurrentTimeSwitch"
+                                Text="Current time"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                     <!--todo: add speed, distance, current heart rate zone-->
+                </TableSection>
+
+                <TableSection Title="Heart Rate zones">
+                    <ViewCell x:Name="ConfigureHrZones1"
+                              ios:Cell.DefaultBackgroundColor="White"
+                              Tapped="ConfigureHrZones_Tapped">
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="20,0,0,0"
+                                     VerticalOptions="Center">
+                            <Label Text="Configure heart rate zones" />
+                            <Label Text=">"
+                                   HorizontalOptions="EndAndExpand"
+                                   Margin="0,0,25,0"
+                                   TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection Title="Alerts">
+                    <SwitchCell x:Name="MaxHrAlertSwitch"
+                                Text="Max heart rate reached"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <SwitchCell x:Name="HRZonesSwitch"
+                                Text="Heart rate zone changes"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                </TableSection>
+                    
+                <!--<TableSection Title="Zone training">
+                    <SwitchCell x:Name="ZoneTrainingSwitch"
+                                Text="Zone training"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                    <ViewCell x:Name="TrainingStudio"
+                              ios:Cell.DefaultBackgroundColor="White"
+                              Tapped="TrainingStudio_Tapped">
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="20,0,0,0"
+                                     VerticalOptions="Center">
+                            <Label Text="Configure training" />
+                            <Label Text=">"
+                                   HorizontalOptions="EndAndExpand"
+                                   Margin="0,0,25,0"
+                                   TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>-->
+
+
+                <!--<TableSection Title="Alarms">
+                    <SwitchCell x:Name="MinHrAlarmSwitch"
+                                Text="Minimum heart rate alarm"
+                                On="False"
+                                ios:Cell.DefaultBackgroundColor="White" />
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Minimum heart rate: "
+                                   VerticalOptions="Center"
+                                   Margin="20,0,20,0"/>
+                            <Picker x:Name="MinHrAlarmValuePicker"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Title="50"
+                                    TitleColor="Black"
+                                    SelectedIndexChanged="MinHrAlarmValue_SelectedIndexChanged"
+                                    Margin="20,5,20,5">
+                                  <Picker.Items>
+                                  <x:String>50</x:String>
+                                  <x:String>60</x:String>
+                                  <x:String>70</x:String>
+                                  <x:String>80</x:String>
+                                  <x:String>90</x:String>
+                                  <x:String>100</x:String>
+                                  <x:String>120</x:String>
+                                  <x:String>120</x:String>
+                                  </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                    <SwitchCell x:Name="MaxHrAlarmSwitch"
+                                Text="Maximum heart rate alarm"
+                                On="False"
+                                ios:Cell.DefaultBackgroundColor="White" />
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Maximum heart rate: "
+                                   VerticalOptions="Center"
+                                   Margin="20,0,20,0"/>
+                            <Picker x:Name="MaxHrAlarmValuePicker"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Title="130"
+                                    TitleColor="Black"
+                                    SelectedIndexChanged="MaxHrAlarmValue_SelectedIndexChanged"
+                                    Margin="20,5,20,5">
+                                  <Picker.Items>
+                                  <x:String>130</x:String>
+                                  <x:String>140</x:String>
+                                  <x:String>150</x:String>
+                                  <x:String>160</x:String>
+                                  <x:String>170</x:String>
+                                  <x:String>180</x:String>
+                                  <x:String>190</x:String>
+                                  <x:String>200</x:String>
+                                  </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>-->
+
+                <TableSection Title="Audio settings">
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Volume"
+                                   VerticalOptions="CenterAndExpand"
+                                   Margin="16"/>
+                            <!--https://stackoverflow.com/questions/59302530/mediamanager-volume-control-for-xamarin-forms-->
+                            <Slider x:Name="VolumeSlider"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    Maximum="1" Minimum="0" Value="1"
+                                    MaximumTrackColor="Black"
+                                    MinimumTrackColor="ForestGreen"
+                                    ThumbColor="DarkSlategray"
+                                    Margin="4"
+                                    ValueChanged="VolumeSlider_ValueChanged"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <SwitchCell x:Name="OnDemandDataSwitch"
+                                Text="On-demand data"
+                                ios:Cell.DefaultBackgroundColor="White"/>
+                </TableSection>
+
+                <TableSection Title="Sensor settings">
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Sensor name: "
+                                   TextColor="Gray"
+                                   VerticalOptions="Center"
+                                   Margin="20,0,0,0"/>
+                            <Label x:Name="ConnectedSensorName" Text=""
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="Center"
+                                   Margin="5,0,0,0"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Sensor ID: "
+                                   TextColor="Gray"
+                                   VerticalOptions="Center"
+                                   Margin="20,0,0,0"/>
+                            <Label x:Name="ConnectedSensorId" Text=""
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="Center"
+                                   Margin="40,0,0,0"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Battery Level: "
+                                   TextColor="Gray"
+                                   VerticalOptions="Center"
+                                   Margin="20,0,0,0"/>
+                            <Label x:Name="ConnectedSensorBatteryLevel" Text=""
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="Center"
+                                   Margin="5,0,0,0"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection Title="Sample audio announcement">
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                        <StackLayout>
+                            <Button Text="Play sample audio"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="SampleBtn"
+                                    Clicked="SampleBtn_Clicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>

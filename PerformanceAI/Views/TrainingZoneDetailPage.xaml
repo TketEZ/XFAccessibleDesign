@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PerformanceAI.Views.TrainingZoneDetailPage"
+	x:Name="page"
+	Title="Training Zone">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Save" Clicked="OnZoneSaved" />
+	</ContentPage.ToolbarItems>
+	<StackLayout Margin="20">
+		<StackLayout VerticalOptions="CenterAndExpand"
+				     HorizontalOptions="Center"
+			   Spacing="40">
+			<Label Text="Zone: " />
+			<Picker Title="Zone" x:Name="ZonePicker" />
+			<Label Text="Duration (minutes): " />
+			<Picker x:Name="DurationPicker" Title="Duration (minutes) " />
+		</StackLayout>
+		<!--<ActivityIndicator HorizontalOptions="Center" IsRunning="{Binding Source={x:Reference TrainingZoneDetailPage}, Path=IsProcessing}" />-->
+		<Button x:Name="DeleteBtn"
+				Text="Delete"
+				Clicked="DeleteZone_Clicked"
+				VerticalOptions="End" />
+	</StackLayout>
+</ContentPage>

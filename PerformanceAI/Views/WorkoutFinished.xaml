@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PerformanceAI.Views.WorkoutFinished">
+        <StackLayout Spacing="10"
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"
+                     Margin="10">
+            
+            <Label x:Name="FinishDateLbl" Text=" " />
+            <Label x:Name="FinishTimeLbl" Text=" " />
+            <Label x:Name="SessionDurationLbl" Text=" " />
+            <Label x:Name="SessionMaxHrLbl" Text=" " />
+            <Label x:Name="SessionAvgHrLbl" Text=" " />
+            <Label x:Name="SessionMinHrLbl" Text=" " />
+
+            <!--<StackLayout
+                VerticalOptions="Center"
+                Orientation="Horizontal">
+            <Button x:Name="SaveWorkoutBtn"
+                    Text="Save Workout?"
+                    Clicked="SaveWorkoutBtn_Clicked" />
+            <Button x:Name="DiscardWorkoutBtn"
+                    Text="Discard Workout?"
+                    Clicked="DiscardWorkoutBtn_Clicked"/>
+            </StackLayout>-->
+
+            <StackLayout VerticalOptions="EndAndExpand"
+                         Margin="10">
+            <Button Text="Homepage"
+                    x:Name="OldWorkoutsBtn"
+                    Clicked="OldWorkoutsBtn_Clicked"
+                    BackgroundColor="Green"
+                    TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+</ContentPage>
