@@ -33,17 +33,18 @@
                                     TitleColor="Black"
                                     SelectedIndexChanged="IntervalFrequencyPicker_SelectedIndexChanged"
                                     Margin="20,5,20,5">
-                                  <Picker.Items>
-                                      <x:String>0</x:String>
-                                      <x:String>5</x:String>
-                                      <x:String>10</x:String>
-                                      <x:String>20</x:String>
-                                      <x:String>30</x:String>
-                                      <x:String>40</x:String>
-                                      <x:String>50</x:String>
-                                      <x:String>60</x:String>
-                                      <x:String>120</x:String>
-                                  </Picker.Items>
+                                <Picker.Items>
+                                    <x:String>0</x:String>
+                                    <x:String>5</x:String>
+                                    <x:String>10</x:String>
+                                    <x:String>20</x:String>
+                                    <x:String>30</x:String>
+                                    <x:String>40</x:String>
+                                    <x:String>50</x:String>
+                                    <x:String>60</x:String>
+                                    <x:String>120</x:String>
+                                    <x:String>300</x:String>
+                                </Picker.Items>
                             </Picker>
                         </StackLayout>
                     </ViewCell>
@@ -68,7 +69,7 @@
                     <SwitchCell x:Name="CurrentTimeSwitch"
                                 Text="Current time"
                                 ios:Cell.DefaultBackgroundColor="White"/>
-                     <!--todo: add speed, distance, current heart rate zone-->
+                    <!--todo: add speed, distance, current heart rate zone-->
                 </TableSection>
 
                 <TableSection Title="Heart Rate zones">
@@ -95,7 +96,7 @@
                                 Text="Heart rate zone changes"
                                 ios:Cell.DefaultBackgroundColor="White"/>
                 </TableSection>
-                    
+
                 <!--<TableSection Title="Zone training">
                     <SwitchCell x:Name="ZoneTrainingSwitch"
                                 Text="Zone training"

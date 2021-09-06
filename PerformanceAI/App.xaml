@@ -3,6 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PerformanceAI.App">
     <Application.Resources>
-        <Thickness x:Key="PageMargin">20</Thickness>
+        <Thickness x:Key="PageMargin">30</Thickness>
+
+        <Color x:Key="ViewBackgroundColor">#191919</Color>
+        <Color x:Key="PrimaryColour">#30e5d0</Color>
+        <Color x:Key="SecondaryColour">#f2f2f2</Color>
+        <Color x:Key="GrayBackground">#979090</Color>
+        <Color x:Key="Accent">#008575</Color>
+
+        <Color x:Key="PrimaryTextColour">#30e5d0</Color>
+        <Color x:Key="SecondaryTextColour">#f2f2f2</Color>
+
+        <x:String x:Key="HistoryTabIcon">&#xf1da;</x:String>
+        <x:String x:Key="NewWorkoutTabIcon">&#xf067;</x:String>
+        <x:String x:Key="SettingsTabIcon">&#xf013;</x:String>
+
     </Application.Resources>
 </Application>

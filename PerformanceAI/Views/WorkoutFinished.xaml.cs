@@ -21,7 +21,7 @@ namespace PerformanceAI.Views
             }
             set
             {
-                if(value != _finishDate)
+                if (value != _finishDate)
                 {
                     _finishDate = value;
                     OnPropertyChanged(nameof(FinishDate));
@@ -144,7 +144,7 @@ namespace PerformanceAI.Views
             if (FinishedWorkout != null)
             {
 
-                TimeSpan workoutDurationTime =  TimeSpan.FromTicks(FinishedWorkout.WorkoutDurationInTicks);
+                TimeSpan workoutDurationTime = TimeSpan.FromTicks(FinishedWorkout.WorkoutDurationInTicks);
 
                 // todo: double check start time and end times are accurate
                 _finishDate = FinishedWorkout.ShortDateListView;
@@ -197,6 +197,8 @@ namespace PerformanceAI.Views
         //    //todo: Handle navigation
         //    //await Navigation.PopAsync();
         //}
+
+        //todo: Automatically hear summary of key stats.The metrics included in the summary should be configurable in settings. Should have a button which allows you to repeat summary. 
 
     }
 }

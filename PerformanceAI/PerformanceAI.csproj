@@ -34,6 +34,15 @@
     <None Remove="Xamarin.CommunityToolkit" />
     <None Remove="Microsoft.CognitiveServices.Speech" />
     <None Remove="Utils\" />
+    <None Remove="Resources\" />
+    <None Remove="Resources\Fonts\" />
+    <None Remove="Resources\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <None Remove="Resources\Fonts\seguisb.ttf" />
+    <None Remove="Resources\Fonts\FASolid.otf" />
+    <None Remove="Resources\Fonts\FASol.otf" />
+    <None Remove="Resources\Fonts\FAReg.otf" />
+    <None Remove="Resources\Fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <None Remove="Resources\Fonts\fa-solid-900.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -41,6 +50,8 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="Utils\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="ViewModels\NewWorkoutsOriginal.cs" />
@@ -55,5 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\NewWorkoutsOriginal.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\FABrands.otf" />
+    <EmbeddedResource Include="Resources\Fonts\seguisb.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\FAReg.otf" />
+    <EmbeddedResource Include="Resources\Fonts\fa-solid-900.ttf" />
   </ItemGroup>
 </Project>
