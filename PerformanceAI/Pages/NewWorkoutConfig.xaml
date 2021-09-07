@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="PerformanceAI.Pages.NewWorkoutConfig">
+    <ContentView.Content>
+        <StackLayout>
+
+            <Label Text="NEW WORKOUT"
+                   Style="{StaticResource H1}"/>
+
+            <Label Text="Activity Type"
+                   Style="{StaticResource H2}"/>
+            <BoxView HeightRequest="1"
+                     Margin="0,0,0,20"
+                     Color="#f2f2f2"/>
+            <Picker x:Name="ActivityTypePicker"
+                    Margin="0,0,0,100"
+                    Title="Activity"
+                    Style="{StaticResource Picker}"
+                    SelectedIndexChanged="ActivityTypePicker_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Indoor Cycling</x:String>
+                        <x:String>Outdoor Cycling</x:String>
+                        <x:String>Wheelchair Turbo</x:String>
+                        <x:String>Social Cycle</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Training Intent"
+                   Style="{StaticResource H2}"/>
+            <BoxView Margin="0,0,0,20"
+                     HeightRequest="1"
+                     Color="#f2f2f2"/>
+            <Picker x:Name="TrainingIntentPicker"
+                    Title="Intent"
+                    Style="{StaticResource Picker}"
+                    SelectedIndexChanged="TrainingIntentPicker_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Endurance</x:String>
+                        <x:String>Active recovery</x:String>
+                        <x:String>O2 Max</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button x:Name="NewWorkoutNextButton"
+                    Text="Next"
+                    Clicked="NewWorkoutNextButton_Clicked"
+                    Style="{StaticResource PrimaryButton}"/>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

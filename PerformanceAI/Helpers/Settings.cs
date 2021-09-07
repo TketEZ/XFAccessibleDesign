@@ -8,286 +8,314 @@ namespace PerformanceAI.Helpers
 
         // https://github.com/jamesmontemagno/app-mycadence/blob/main/MyCadence/Helpers/Settings.cs
 
-    #region Device Info
+        #region Device Info
 
-            public static string SensorName
+        public static string SensorName
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("SensorName", "Sensor Name");
-                }
-                set
-                {
-                    Preferences.Set(SensorName, value);
-                }
+                return Preferences.Get("SensorName", "Sensor Name");
             }
-
-            public static string SensorId
+            set
             {
-                get
-                {
-                    return Preferences.Get("SensorId", "Sensor ID");
-                }
-                set
-                {
-                    Preferences.Set(SensorId, value);
-                }
+                Preferences.Set(SensorName, value);
             }
+        }
 
-            #endregion Device Info
-
-    #region Interval Items
-
-            public static bool IsIntervalAlertsEnabled
+        public static string SensorId
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("IsIntervalAlertsEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("IsIntervalAlertsEnabled", value);
-                }
+                return Preferences.Get("SensorId", "Sensor ID");
             }
-
-            const int IntervalFrequencyDefault = 0;
-            public static int IntervalFrequency
+            set
             {
-                get
-                {
-                    return Preferences.Get("IntervalFrequency", IntervalFrequencyDefault);
-                }
-                set
-                {
-                    Preferences.Set("IntervalFrequency", value);
-                }
+                Preferences.Set(SensorId, value);
             }
+        }
 
-            public static bool IsCurrentHrAlertEnabled
+        #endregion Device Info
+
+        #region Interval Items
+
+        public static bool IsIntervalAlertsEnabled
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("IsCurrentHrAlertEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("IsCurrentHrAlertEnabled", value);
-                }
+                return Preferences.Get("IsIntervalAlertsEnabled", false);
             }
-
-            public static bool isAvgHrEnabled
+            set
             {
-                get
-                {
-                    return Preferences.Get("isAvgHrEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("isAvgHrEnabled", value);
-                }
+                Preferences.Set("IsIntervalAlertsEnabled", value);
             }
+        }
 
-            public static bool isMaxHrEnabled
+        const int IntervalFrequencyDefault = 0;
+        public static int IntervalFrequency
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("isMaxHrEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("isMaxHrEnabled", value);
-                }
+                return Preferences.Get("IntervalFrequency", IntervalFrequencyDefault);
             }
-
-            public static bool isMinHrEnabled
+            set
             {
-                get
-                {
-                    return Preferences.Get("isMinHrEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("isMinHrEnabled", value);
-                }
+                Preferences.Set("IntervalFrequency", value);
             }
+        }
 
-            public static bool isWorkoutDurationEnabled
+        public static bool IsCurrentHrAlertEnabled
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("isWorkoutDurationEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("isWorkoutDurationEnabled", value);
-                }
+                return Preferences.Get("IsCurrentHrAlertEnabled", false);
             }
-
-            public static bool isCurrentTimeEnabled
+            set
             {
-                get
-                {
-                    return Preferences.Get("isCurrentTimeEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("isCurrentTimeEnabled", value);
-                }
+                Preferences.Set("IsCurrentHrAlertEnabled", value);
             }
+        }
 
-            #endregion Interval Items
-
-    #region Alarms
-
-            public static bool IsHrZoneChangeAlertEnabled
+        public static bool isAvgHrEnabled
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("IsHrZoneChangeAlertEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("IsHrZoneChangeAlertEnabled", value);
-                }
+                return Preferences.Get("isAvgHrEnabled", false);
             }
-
-            public static bool isMaxHrAlarmEnabled
+            set
             {
-                get
-                {
-                    return Preferences.Get("isMaxHrAlarmEnabled", false);
-                }
-                set
-                {
-                    Preferences.Set("isMaxHrAlarmEnabled", value);
-                }
+                Preferences.Set("isAvgHrEnabled", value);
             }
+        }
 
-            #endregion Alarms
-
-    #region Audio Items
-
-            const double VolumeValueDefault = 1;
-            public static double VolumeValue
+        public static bool isMaxHrEnabled
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("VolumeValue", VolumeValueDefault);
-                }
-                set
-                {
-                    Preferences.Set("VolumeValue", value);
-                }
+                return Preferences.Get("isMaxHrEnabled", false);
             }
-
-            public static bool IsOnDemandDataenabled
+            set
             {
-                get
-                {
-                    return Preferences.Get("IsOnDemandDataenabled", false);
-                }
-                set
-                {
-                    Preferences.Set("IsOnDemandDataenabled", value);
-                }
+                Preferences.Set("isMaxHrEnabled", value);
             }
+        }
+
+        public static bool isMinHrEnabled
+        {
+            get
+            {
+                return Preferences.Get("isMinHrEnabled", false);
+            }
+            set
+            {
+                Preferences.Set("isMinHrEnabled", value);
+            }
+        }
+
+        public static bool isWorkoutDurationEnabled
+        {
+            get
+            {
+                return Preferences.Get("isWorkoutDurationEnabled", false);
+            }
+            set
+            {
+                Preferences.Set("isWorkoutDurationEnabled", value);
+            }
+        }
+
+        public static bool isCurrentTimeEnabled
+        {
+            get
+            {
+                return Preferences.Get("isCurrentTimeEnabled", false);
+            }
+            set
+            {
+                Preferences.Set("isCurrentTimeEnabled", value);
+            }
+        }
+
+        #endregion Interval Items
+
+        #region Alarms
+
+        public static bool IsHrZoneChangeAlertEnabled
+        {
+            get
+            {
+                return Preferences.Get("IsHrZoneChangeAlertEnabled", false);
+            }
+            set
+            {
+                Preferences.Set("IsHrZoneChangeAlertEnabled", value);
+            }
+        }
+
+        public static bool isMaxHrAlarmEnabled
+        {
+            get
+            {
+                return Preferences.Get("isMaxHrAlarmEnabled", false);
+            }
+            set
+            {
+                Preferences.Set("isMaxHrAlarmEnabled", value);
+            }
+        }
+
+        #endregion Alarms
+
+        #region Audio Items
+
+        const double VolumeValueDefault = 1;
+        public static double VolumeValue
+        {
+            get
+            {
+                return Preferences.Get("VolumeValue", VolumeValueDefault);
+            }
+            set
+            {
+                Preferences.Set("VolumeValue", value);
+            }
+        }
+
+        public static bool IsOnDemandDataenabled
+        {
+            get
+            {
+                return Preferences.Get("IsOnDemandDataenabled", false);
+            }
+            set
+            {
+                Preferences.Set("IsOnDemandDataenabled", value);
+            }
+        }
 
         #endregion Audio Items
 
         #region HrZoneSettings
 
         const int MaxHrDefault = 0;
-            public static int MaxHr
+        public static int MaxHr
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("MaxHr", MaxHrDefault);
-                }
-                set
-                {
-                    Preferences.Set("MaxHr", value);
-                }
+                return Preferences.Get("MaxHr", MaxHrDefault);
             }
-
-            const int HrZone1LowerBoundDefault = 0;
-            public static int HrZone1LowerBound
+            set
             {
-                get
-                {
-                    return Preferences.Get("HrZone1LowerBound", HrZone1LowerBoundDefault);
-                }
-                set
-                {
-                    Preferences.Set("HrZone1LowerBound", value);
-                }
+                Preferences.Set("MaxHr", value);
             }
+        }
 
-            const int HrZone1UpperBoundDefault = 0;
-            public static int HrZone1UpperBound
+        const int HrZone1LowerBoundDefault = 0;
+        public static int HrZone1LowerBound
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("HrZone1UpperBound", HrZone1UpperBoundDefault);
-                }
-                set
-                {
-                    Preferences.Set("HrZone1UpperBound", value);
-                }
+                return Preferences.Get("HrZone1LowerBound", HrZone1LowerBoundDefault);
             }
-
-            const int HrZone2UpperBoundDefault = 0;
-            public static int HrZone2UpperBound
+            set
             {
-                get
-                {
-                    return Preferences.Get("HrZone2UpperBound", HrZone2UpperBoundDefault);
-                }
-                set
-                {
-                    Preferences.Set("HrZone2UpperBound", value);
-                }
+                Preferences.Set("HrZone1LowerBound", value);
             }
+        }
 
-            const int HrZone3UpperBoundDefault = 0;
-            public static int HrZone3UpperBound
+        const int HrZone1UpperBoundDefault = 0;
+        public static int HrZone1UpperBound
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("HrZone3UpperBound", HrZone3UpperBoundDefault);
-                }
-                set
-                {
-                    Preferences.Set("HrZone3UpperBound", value);
-                }
+                return Preferences.Get("HrZone1UpperBound", HrZone1UpperBoundDefault);
             }
-
-            const int HrZone4UpperBoundDefault = 0;
-            public static int HrZone4UpperBound
+            set
             {
-                get
-                {
-                    return Preferences.Get("HrZone4UpperBound", HrZone4UpperBoundDefault);
-                }
-                set
-                {
-                    Preferences.Set("HrZone4UpperBound", value);
-                }
+                Preferences.Set("HrZone1UpperBound", value);
             }
+        }
 
-            const int HrZone5UpperBoundDefault = 0;
-            public static int HrZone5UpperBound
+        const int HrZone2UpperBoundDefault = 0;
+        public static int HrZone2UpperBound
+        {
+            get
             {
-                get
-                {
-                    return Preferences.Get("HrZone5UpperBound", HrZone5UpperBoundDefault);
-                }
-                set
-                {
-                    Preferences.Set("HrZone5UpperBound", value);
-                }
+                return Preferences.Get("HrZone2UpperBound", HrZone2UpperBoundDefault);
             }
+            set
+            {
+                Preferences.Set("HrZone2UpperBound", value);
+            }
+        }
 
-    #endregion HrZoneSettings
+        const int HrZone3UpperBoundDefault = 0;
+        public static int HrZone3UpperBound
+        {
+            get
+            {
+                return Preferences.Get("HrZone3UpperBound", HrZone3UpperBoundDefault);
+            }
+            set
+            {
+                Preferences.Set("HrZone3UpperBound", value);
+            }
+        }
+
+        const int HrZone4UpperBoundDefault = 0;
+        public static int HrZone4UpperBound
+        {
+            get
+            {
+                return Preferences.Get("HrZone4UpperBound", HrZone4UpperBoundDefault);
+            }
+            set
+            {
+                Preferences.Set("HrZone4UpperBound", value);
+            }
+        }
+
+        const int HrZone5UpperBoundDefault = 0;
+        public static int HrZone5UpperBound
+        {
+            get
+            {
+                return Preferences.Get("HrZone5UpperBound", HrZone5UpperBoundDefault);
+            }
+            set
+            {
+                Preferences.Set("HrZone5UpperBound", value);
+            }
+        }
+
+        #endregion HrZoneSettings
+
+        #region Workout Settings
+
+        public static string ActivityType
+        {
+            get
+            {
+                return Preferences.Get("ActivityType", "Activity");
+            }
+            set
+            {
+                Preferences.Set(ActivityType, value);
+            }
+        }
+
+        public static string TrainingIntent
+        {
+            get
+            {
+                return Preferences.Get("TrainingIntent", "Intent");
+            }
+            set
+            {
+                Preferences.Set(TrainingIntent, value);
+            }
+        }
+
+        #endregion
 
     }
 }

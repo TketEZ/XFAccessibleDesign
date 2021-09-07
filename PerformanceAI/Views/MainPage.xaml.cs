@@ -29,5 +29,9 @@ namespace PerformanceAI
         {
             await Navigation.PushAsync(new OldWorkouts());
         }
+
+        void TabViewItem_TabTapped(System.Object sender, Xamarin.CommunityToolkit.UI.Views.TabTappedEventArgs e)
+        {
+        }
     }
 }

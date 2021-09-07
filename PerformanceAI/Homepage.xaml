@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:local="clr-namespace:PerformanceAI.Pages;assembly=PerformanceAI"
+    x:Class="PerformanceAI.Homepage"
+    Title=" "
+    ios:Page.UseSafeArea="True"
+    NavigationPage.HasNavigationBar="False"
+    NavigationPage.HasBackButton="False"
+    BackgroundColor="{StaticResource ViewBackgroundColor}">
+
+    <xct:TabView Style="{StaticResource TabView}">
+        <xct:TabViewItem Style="{StaticResource TabViewItem}"
+                         Text="New Workouts">
+            <xct:TabViewItem.Icon>
+                <FontImageSource Glyph="{StaticResource NewWorkoutTabIcon}"
+                                 FontFamily="{StaticResource TabViewItemFontFamily}"
+                                 Color="{StaticResource GrayBackground}">
+                </FontImageSource>
+            </xct:TabViewItem.Icon>
+            <xct:TabViewItem.IconSelected>
+                <FontImageSource Glyph="{StaticResource NewWorkoutTabIcon}"
+                                 FontFamily="{StaticResource TabViewItemFontFamily}"
+                                 Color="{StaticResource SelectedTabViewItemTextColour}">
+                </FontImageSource>
+            </xct:TabViewItem.IconSelected>
+            <local:NewWorkoutConfig />
+        </xct:TabViewItem>
+
+        <xct:TabViewItem Text="History"
+                         Style="{StaticResource TabViewItem}">
+            <xct:TabViewItem.Icon>
+                <FontImageSource Glyph="{StaticResource HistoryTabIcon}"
+                                 FontFamily="{StaticResource TabViewItemFontFamily}"
+                                 Color="{StaticResource GrayBackground}">
+                </FontImageSource>
+            </xct:TabViewItem.Icon>
+            <xct:TabViewItem.IconSelected>
+                <FontImageSource Glyph="{StaticResource HistoryTabIcon}"
+                                 FontFamily="{StaticResource TabViewItemFontFamily}"
+                                 Color="{StaticResource SelectedTabViewItemTextColour}">
+                </FontImageSource>
+            </xct:TabViewItem.IconSelected>
+            <Grid>
+                <Label Text="HOMEPAGE"
+                       Margin="{StaticResource PageMargin}"
+                       TextColor="{StaticResource SelectedTabViewItemTextColour}"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="25"/>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    Text="Choose the new workout tab below to get started with a new workout!"
+                    FontFamily="MainFont"
+                    Margin="40"
+                    TextColor="{StaticResource SelectedTabViewItemTextColour}"/>
+            </Grid>
+        </xct:TabViewItem>
+
+        <xct:TabViewItem Text="Settings"
+                         Style="{StaticResource TabViewItem}"
+                         TabTapped="TabViewItem_TabTapped">
+            <xct:TabViewItem.Icon>
+                <FontImageSource Glyph="{StaticResource SettingsTabIcon}"
+                                 FontFamily="{StaticResource TabViewItemFontFamily}"
+                                 Color="{StaticResource GrayBackground}">
+                </FontImageSource>
+            </xct:TabViewItem.Icon>
+            <xct:TabViewItem.IconSelected>
+                <FontImageSource Glyph="{StaticResource SettingsTabIcon}"
+                                 FontFamily="{StaticResource TabViewItemFontFamily}"
+                                 Color="{StaticResource SelectedTabViewItemTextColour}">
+                </FontImageSource>
+            </xct:TabViewItem.IconSelected>
+            <local:SettingsTab />
+        </xct:TabViewItem>
+    </xct:TabView>
+</ContentPage>

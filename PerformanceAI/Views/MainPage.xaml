@@ -2,60 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local="clr-namespace:PerformanceAI.Views;assembly=PerformanceAI"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:helpers="clr-namespace:PerformanceAI.Helpers"
-             ios:Page.UseSafeArea="True"
              x:Class="PerformanceAI.MainPage"
              Title=" "
+             ios:Page.UseSafeArea="True"
              NavigationPage.HasNavigationBar="False"
              NavigationPage.HasBackButton="False"
              BackgroundColor="{StaticResource ViewBackgroundColor}">
 
-    <!-- check positioning of everything -->
     <!--check why things at top of page are not white-->
+    <!--Populate tabview content with other pages-->
 
     <xct:TabView TabStripPlacement="Bottom"
                  TabStripBackgroundColor="{StaticResource SecondaryColour}"
                  IsSwipeEnabled="False"
-                 TabStripHeight="70">
-
-        <xct:TabViewItem Text="History"
-                         TextColor="{StaticResource GrayBackground}"
-                         TextColorSelected="{StaticResource PrimaryTextColour}"
-                         FontSize="12"
-                         FontFamily="MainFont"
-                         FontAttributesSelected="Bold">
-            <xct:TabViewItem.Icon>
-                <FontImageSource Glyph="{StaticResource HistoryTabIcon}"
-                                 FontFamily="FAS"
-                                 Color="{StaticResource GrayBackground}">
-                </FontImageSource>
-            </xct:TabViewItem.Icon>
-            <xct:TabViewItem.IconSelected>
-                <FontImageSource Glyph="{StaticResource HistoryTabIcon}"
-                                 FontFamily="FAS"
-                                 Color="{StaticResource PrimaryTextColour}">
-                </FontImageSource>
-            </xct:TabViewItem.IconSelected>
-
-            <Grid>
-                <Label Text="HOMEPAGE"
-                       Margin="{StaticResource PageMargin}"
-                       TextColor="{StaticResource PrimaryTextColour}"
-                       HorizontalOptions="Center"
-                       FontAttributes="Bold"
-                       FontSize="25"/>
-                <Label
-                    HorizontalOptions="CenterAndExpand"
-                    HorizontalTextAlignment="Center"
-                    VerticalOptions="Center"
-                    Text="Choose the new workout tab below to get started with a new workout!"
-                    FontFamily="MainFont"
-                    Margin="40"
-                    TextColor="{StaticResource PrimaryTextColour}"/>
-            </Grid>
-        </xct:TabViewItem>
-
+                 TabStripHeight="70" TabIndicatorColor="#30e5d0">
         <xct:TabViewItem Text="New Workouts"
                          TextColor="{StaticResource GrayBackground}"
                          TextColorSelected="{StaticResource PrimaryTextColour}"
@@ -74,8 +36,40 @@
                                  Color="{StaticResource PrimaryTextColour}">
                 </FontImageSource>
             </xct:TabViewItem.IconSelected>
+        </xct:TabViewItem>
+
+        <xct:TabViewItem Text="History"
+                         TextColor="{StaticResource GrayBackground}"
+                         TextColorSelected="{StaticResource PrimaryTextColour}"
+                         FontFamily="MainFont"
+                         FontAttributesSelected="Bold">
+            <xct:TabViewItem.Icon>
+                <FontImageSource Glyph="{StaticResource HistoryTabIcon}"
+                                 FontFamily="FAS"
+                                 Color="{StaticResource GrayBackground}">
+                </FontImageSource>
+            </xct:TabViewItem.Icon>
+            <xct:TabViewItem.IconSelected>
+                <FontImageSource Glyph="{StaticResource HistoryTabIcon}"
+                                 FontFamily="FAS"
+                                 Color="{StaticResource PrimaryTextColour}">
+                </FontImageSource>
+            </xct:TabViewItem.IconSelected>
             <Grid>
-                <Label Text="Coming soon!" />
+                <Label Text="HOMEPAGE"
+                       Margin="{StaticResource PageMargin}"
+                       TextColor="{StaticResource PrimaryTextColour}"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="25"/>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    Text="Choose the new workout tab below to get started with a new workout!"
+                    FontFamily="MainFont"
+                    Margin="40"
+                    TextColor="{StaticResource PrimaryTextColour}"/>
             </Grid>
         </xct:TabViewItem>
 
@@ -84,7 +78,8 @@
                          TextColorSelected="{StaticResource PrimaryTextColour}"
                          FontSize="12"
                          FontFamily="MainFont"
-                         FontAttributesSelected="Bold">
+                         FontAttributesSelected="Bold"
+                         TabTapped="TabViewItem_TabTapped">
             <xct:TabViewItem.Icon>
                 <FontImageSource Glyph="{StaticResource SettingsTabIcon}"
                                  FontFamily="FAS"
@@ -98,8 +93,8 @@
                 </FontImageSource>
             </xct:TabViewItem.IconSelected>
             <Grid>
-                <Label Text="Coming soon!" />
             </Grid>
         </xct:TabViewItem>
     </xct:TabView>
+
 </ContentPage>

@@ -16,7 +16,7 @@ namespace PerformanceAI
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new Homepage());
         }
 
         protected override async void OnStart()

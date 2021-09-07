@@ -1,22 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="PerformanceAI.App">
     <Application.Resources>
-        <Thickness x:Key="PageMargin">30</Thickness>
 
+        <!-- Margins -->
+        <Thickness x:Key="PageMargin">30</Thickness>
+        <Thickness x:Key="PrimaryTextMargin">30</Thickness>
+        <Thickness x:Key="PrimaryButtonMarginIos">0,0,0,60</Thickness>
+        <Thickness x:Key="PrimaryButtonMarginAndroid">0,0,0,60</Thickness>
+
+        <!-- Background Colours -->
         <Color x:Key="ViewBackgroundColor">#191919</Color>
         <Color x:Key="PrimaryColour">#30e5d0</Color>
         <Color x:Key="SecondaryColour">#f2f2f2</Color>
         <Color x:Key="GrayBackground">#979090</Color>
         <Color x:Key="Accent">#008575</Color>
 
-        <Color x:Key="PrimaryTextColour">#30e5d0</Color>
+        <!-- H1 -->
+        <Color x:Key="H1TextColour">#30e5d0</Color>
+        <x:Double x:Key="H1FontSize">40</x:Double>
+
+        <!-- H2 -->
+        <Color x:Key="H2TextColour">#30e5d0</Color>
+        <x:Double x:Key="H2FontSize">25</x:Double>
+
+        <!-- H3 -->
         <Color x:Key="SecondaryTextColour">#f2f2f2</Color>
 
+        <!-- Primary Button -->
+        <Color x:Key="PrimaryButtonBgColour">#30e5d0</Color>
+        <Color x:Key="PrimaryButtonTextColour">#191919</Color>
+
+        <!-- Primary Button -->
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="TextColor" Value="{StaticResource PrimaryButtonTextColour}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryButtonBgColour}" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="FontFamily" Value="Mainfont"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="WidthRequest" Value="300" />
+            <Setter Property="HeightRequest" Value="{OnPlatform iOS=70, Android=60}" />
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+            <Setter Property="Margin" Value="{OnPlatform iOS={StaticResource PrimaryButtonMarginIos}, Android={StaticResource PrimaryButtonMarginAndroid}}"/>
+        </Style>
+
+        <!-- Label - H1 -->
+        <Style x:Key="H1" TargetType="Label">
+            <Setter Property="Margin" Value="{StaticResource PrimaryTextMargin}"/>
+            <Setter Property="TextColor" Value="{StaticResource H1TextColour}"/>
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="{StaticResource H1FontSize}"/>
+        </Style>
+
+        <!-- Label - H2 -->
+        <Style x:Key="H2" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource H2TextColour}"/>
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="FontSize" Value="{StaticResource H2FontSize}"/>
+            <Setter Property="FontFamily" Value="MainFont"/>
+        </Style>
+
+        <!-- Picker -->
+        <Style x:Key="Picker" TargetType="Picker">
+            <Setter Property="FontFamily" Value="MainFont"/>
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="BackgroundColor" Value="#f2f2f2"/>
+        </Style>
+
+        <!--TabView - Text-->
+        <Color x:Key="TabViewItemTextColour">#979090</Color>
+        <Color x:Key="SelectedTabViewItemTextColour">#30e5d0</Color>
+        <x:Double x:Key="TabViewitemFontSize">12</x:Double>
+
+        <!-- TabViewItem - Icons -->
+        <x:String x:Key="TabViewItemFontFamily">FAS</x:String>
         <x:String x:Key="HistoryTabIcon">&#xf1da;</x:String>
         <x:String x:Key="NewWorkoutTabIcon">&#xf067;</x:String>
         <x:String x:Key="SettingsTabIcon">&#xf013;</x:String>
+        <x:String x:Key="PlusCircleIcon">&#xf055;</x:String>
+
+        <!-- TabView -->
+        <Style x:Key="TabView" TargetType="xct:TabView">
+            <Setter Property="TabStripPlacement" Value="Bottom"/>
+            <Setter Property="TabStripBackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="IsSwipeEnabled" Value="False" />
+            <Setter Property="TabStripHeight" Value="70" />
+        </Style>
+
+        <!-- TabviewItem - not selected -->
+        <Style x:Key="TabViewItem" TargetType="xct:TabViewItem">
+            <Setter Property="TextColor" Value="{StaticResource TabViewItemTextColour}" />
+            <Setter Property="TextColorSelected" Value="{StaticResource SelectedTabViewItemTextColour}"/>
+            <Setter Property="FontSize" Value="{StaticResource TabViewitemFontSize}"/>
+            <Setter Property="FontFamily" Value="Mainfont"/>
+            <Setter Property="FontAttributesSelected" Value="Bold"/>
+        </Style>
+
+
 
     </Application.Resources>
 </Application>
