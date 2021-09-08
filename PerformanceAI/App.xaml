@@ -7,7 +7,7 @@
 
         <!-- Margins -->
         <Thickness x:Key="PageMargin">30</Thickness>
-        <Thickness x:Key="PrimaryTextMargin">30</Thickness>
+        <Thickness x:Key="PrimaryTextMargin">30,0,30,30</Thickness>
         <Thickness x:Key="PrimaryButtonMarginIos">0,0,0,60</Thickness>
         <Thickness x:Key="PrimaryButtonMarginAndroid">0,0,0,60</Thickness>
 
@@ -18,9 +18,12 @@
         <Color x:Key="GrayBackground">#979090</Color>
         <Color x:Key="Accent">#008575</Color>
 
+        <!-- picker -->
+        <Color x:Key="PickerTextColour">#191919</Color>
+
         <!-- H1 -->
         <Color x:Key="H1TextColour">#30e5d0</Color>
-        <x:Double x:Key="H1FontSize">40</x:Double>
+        <x:Double x:Key="H1FontSize">30</x:Double>
 
         <!-- H2 -->
         <Color x:Key="H2TextColour">#30e5d0</Color>
@@ -71,6 +74,8 @@
             <Setter Property="FontSize" Value="Medium"/>
             <Setter Property="HeightRequest" Value="50" />
             <Setter Property="BackgroundColor" Value="#f2f2f2"/>
+            <Setter Property="TitleColor" Value="{StaticResource GrayBackground}" />
+            <Setter Property="TextColor" Value="{StaticResource PickerTextColour}" />
         </Style>
 
         <!--TabView - Text-->

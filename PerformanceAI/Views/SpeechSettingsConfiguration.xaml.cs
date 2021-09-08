@@ -60,10 +60,6 @@ namespace PerformanceAI.Views
             // Alarms
             MaxHrAlertSwitch.On = Settings.isMaxHrAlarmEnabled;
             HRZonesSwitch.On = Settings.IsHrZoneChangeAlertEnabled;
-            //MinHrAlarmSwitch.On = Settings.isMinHrAlarmEnabled;
-            //MaxHrAlarmSwitch.On = Settings.isMaxHrAlarmEnabled;
-            //MinHrAlarmValuePicker.SelectedItem = Settings.MinHrAlarmValue.ToString();
-            //MaxHrAlarmValuePicker.SelectedItem = Settings.MaxHrAlarmValue.ToString();
 
             // set device battery info
             string batteryLevel;

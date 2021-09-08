@@ -13,11 +13,7 @@ namespace PerformanceAI.Pages
         public NewWorkoutConfig()
         {
             InitializeComponent();
-        }
-
-        protected override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
+            BindingContext = this;
 
             TrainingIntentPicker.SelectedItem = Settings.TrainingIntent.ToString();
             ActivityTypePicker.SelectedItem = Settings.ActivityType.ToString();

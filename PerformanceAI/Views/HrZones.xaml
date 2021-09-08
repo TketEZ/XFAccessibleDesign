@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="PerformanceAI.Views.HrZones"
-    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+    BackgroundColor="{StaticResource ViewBackgroundColor}"
+    NavigationPage.HasNavigationBar="True">
 
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="CenterAndExpand"
@@ -11,79 +12,88 @@
                  Margin="{StaticResource PageMargin}">
         <StackLayout.Resources>
             <Thickness x:Key="TopMarginForEntry">0,20,0,0</Thickness>
-            <x:Double x:Key="WidthForEntry">50</x:Double>
+            <x:Double x:Key="WidthForEntry">100</x:Double>
+            <x:Double x:Key="HeightForEntry">50</x:Double>
+            <LayoutOptions x:Key="HorizontalPositioningForEntry" Alignment="End" />
+            <Style x:Key="ForEntry" TargetType="Entry">
+                <Setter Property="Margin" Value="0,20,0,0" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HeightRequest" Value="35" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+                <Setter Property="TextColor" Value="{StaticResource PickerTextColour}" />
+                <Setter Property="FontFamily" Value="MainFont" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
         </StackLayout.Resources>
 
-        <Label Text="BPM"
-               HorizontalOptions="End"
-               Margin="0,20,10,0"/>
+        <Label Text="HEART RATE ZONES"
+            Style="{StaticResource H1}"/>
 
-        <StackLayout Orientation="Horizontal"
-                     Margin="{StaticResource TopMarginForEntry}">
+        <Label Text="BPM"
+               Style="{StaticResource H2}"
+               HorizontalOptions="End"
+               Margin="0,0,20,0"/>
+
+        <StackLayout Orientation="Horizontal">
             <Label Text="Max Heart rate: "
+                   Style="{StaticResource H2}"
                    VerticalOptions="Center"/>
             <Entry x:Name="MaxHr"
                    Placeholder="180"
-                   WidthRequest="{StaticResource WidthForEntry}"
-                   HorizontalTextAlignment="Center"/>
+                   Style="{StaticResource ForEntry}"/>
         </StackLayout>
 
-        <BoxView HeightRequest="1"
+        <BoxView HeightRequest="2"
                  WidthRequest="1"
                  HorizontalOptions="FillAndExpand"
-                 Color="#1690F4"/>
+                 Margin="0,0,0,10"
+                 Color="{StaticResource PrimaryColour}"/>
 
         <StackLayout>
             <Entry x:Name="HrZone1LowerBound"
                    Placeholder="80"
-                   HorizontalOptions="End"
-                   Margin="{StaticResource TopMarginForEntry}"
-                   WidthRequest="{StaticResource WidthForEntry}"
-                   HorizontalTextAlignment="Center"/>
-            <Label Text="Zone 1" />
+                   Style="{StaticResource ForEntry}"/>
+            <Label Text="Zone 1"
+                   Style="{StaticResource H2}"/>
             <Entry x:Name="HrZone1UpperBound"
                    Placeholder="100"
-                   HorizontalOptions="End"
-                   WidthRequest="{StaticResource WidthForEntry}"
-                   HorizontalTextAlignment="Center"/>
+                   Style="{StaticResource ForEntry}"/>
         </StackLayout>
-        
+
         <StackLayout>
-            <Label Text="Zone 2" />
+            <Label Text="Zone 2"
+                   Style="{StaticResource H2}"/>
             <Entry x:Name="HrZone2UpperBound"
                    Placeholder="120"
-                   HorizontalOptions="End"
-                   WidthRequest="{StaticResource WidthForEntry}"
-                   HorizontalTextAlignment="Center"/>
+                   Style="{StaticResource ForEntry}"/>
         </StackLayout>
 
         <StackLayout>
-            <Label Text="Zone 3" />
+            <Label Text="Zone 3"
+                   Style="{StaticResource H2}"/>
             <Entry x:Name="HrZone3UpperBound"
                    Placeholder="140"
-                   HorizontalOptions="End"
-                   WidthRequest="{StaticResource WidthForEntry}"
-                   HorizontalTextAlignment="Center"/>
+                   Style="{StaticResource ForEntry}"/>
         </StackLayout>
 
         <StackLayout>
-            <Label Text="Zone 4" />
+            <Label Text="Zone 4"
+                   Style="{StaticResource H2}"/>
             <Entry x:Name="HrZone4UpperBound"
                    Placeholder="160"
-                   HorizontalOptions="End"
-                   WidthRequest="{StaticResource WidthForEntry}"
-                   HorizontalTextAlignment="Center"/>
+                   Style="{StaticResource ForEntry}"/>
         </StackLayout>
-        
+
         <StackLayout>
-            <Label Text="Zone 5" />
+            <Label Text="Zone 5"
+                   Style="{StaticResource H2}"/>
             <Entry x:Name="HrZone5UpperBound"
                    Placeholder="170"
                    BindingContext="{x:Reference MaxHr}"
                    Text="{Binding Path=Text}"
-                   HorizontalOptions="End"
-                   WidthRequest="{StaticResource WidthForEntry}"
-                   HorizontalTextAlignment="Center"/>
+                   Style="{StaticResource ForEntry}"/>
         </StackLayout>
 
     </StackLayout>

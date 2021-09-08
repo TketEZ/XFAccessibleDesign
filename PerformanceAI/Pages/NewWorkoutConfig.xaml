@@ -15,6 +15,7 @@
                      Margin="0,0,0,20"
                      Color="#f2f2f2"/>
             <Picker x:Name="ActivityTypePicker"
+                    FontSize="Large"
                     Margin="0,0,0,100"
                     Title="Activity"
                     Style="{StaticResource Picker}"
@@ -36,6 +37,7 @@
                      Color="#f2f2f2"/>
             <Picker x:Name="TrainingIntentPicker"
                     Title="Intent"
+                    FontSize="Large"
                     Style="{StaticResource Picker}"
                     SelectedIndexChanged="TrainingIntentPicker_SelectedIndexChanged">
                 <Picker.ItemsSource>

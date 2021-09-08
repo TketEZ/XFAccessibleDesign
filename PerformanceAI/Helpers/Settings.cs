@@ -18,7 +18,7 @@ namespace PerformanceAI.Helpers
             }
             set
             {
-                Preferences.Set(SensorName, value);
+                Preferences.Set("SensorName", value);
             }
         }
 
@@ -30,7 +30,7 @@ namespace PerformanceAI.Helpers
             }
             set
             {
-                Preferences.Set(SensorId, value);
+                Preferences.Set("SensorId", value);
             }
         }
 
@@ -299,7 +299,7 @@ namespace PerformanceAI.Helpers
             }
             set
             {
-                Preferences.Set(ActivityType, value);
+                Preferences.Set("ActivityType", value);
             }
         }
 
@@ -311,7 +311,7 @@ namespace PerformanceAI.Helpers
             }
             set
             {
-                Preferences.Set(TrainingIntent, value);
+                Preferences.Set("TrainingIntent", value);
             }
         }
 

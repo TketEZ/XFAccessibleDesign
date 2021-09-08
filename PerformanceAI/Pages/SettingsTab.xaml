@@ -4,14 +4,239 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="PerformanceAI.Pages.SettingsTab">
     <ContentView.Content>
-        <TableView>
-            <TableRoot>
-                <TableSection>
-                    <SwitchCell>
+        <StackLayout>
 
-                    </SwitchCell>
-                </TableSection>
-            </TableRoot>
-        </TableView>
+            <Label Text="SETTINGS"
+                   Style="{StaticResource H1}"/>
+
+            <TableView Intent="Settings"
+                   BackgroundColor="{StaticResource ViewBackgroundColor}"
+                       HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection Title="Audio announcements"
+                                  TextColor="{StaticResource H2TextColour}">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Enabled"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="IntervalAlertsSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsIntervalAlertsToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Interval Frequency (seconds): "
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"
+                                       Margin="20,0,20,0"/>
+                                <Picker x:Name="IntervalFrequencyPicker"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    FontFamily="MainFont"
+                                    BackgroundColor="{StaticResource SecondaryColour}"
+                                    Title="0"
+                                    TitleColor="{StaticResource PickerTextColour}"
+                                    SelectedIndexChanged="IntervalFrequencyPicker_SelectedIndexChanged"
+                                    Margin="20,5,20,5">
+                                    <Picker.Items>
+                                        <x:String>0</x:String>
+                                        <x:String>5</x:String>
+                                        <x:String>10</x:String>
+                                        <x:String>20</x:String>
+                                        <x:String>30</x:String>
+                                        <x:String>40</x:String>
+                                        <x:String>50</x:String>
+                                        <x:String>60</x:String>
+                                        <x:String>120</x:String>
+                                        <x:String>300</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+
+                    <TableSection Title="Interval Content"
+                              TextColor="{StaticResource H2TextColour}">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Current heart rate"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="CurrentHrSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsCurrentHrToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Average heart rate"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="AvgHrSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsAvgHrToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Maximum heart rate"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="MaxHrSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsMaxHrToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Minimum heart rate"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="MinHrSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsMinHrToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Workout duration"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="DurationSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsDurationToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Current time"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="CurrentTimeSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsCurrentTimeToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+
+                    <TableSection Title="Heart Rate zones"
+                              TextColor="{StaticResource H2TextColour}">
+                        <TextCell Text="Configure heart rate zones"
+                                  x:Name="ConfigureHrZones"
+                                  Tapped="ConfigureHrZones_Tapped"
+                                  TextColor="{StaticResource SecondaryColour}"
+                                  />
+                    </TableSection>
+
+                    <TableSection Title="Alerts"
+                              TextColor="{StaticResource H2TextColour}">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Max heart rate reached"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="MaxHrAlertSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsMaxHrAlarmEnabled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="Heart rate zone changes"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="HRZonesSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsHrZonesAlarmEnabled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+
+                    <TableSection Title="Audio settings"
+                              TextColor="{StaticResource H2TextColour}">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Volume"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="CenterAndExpand"
+                                       Margin="20"/>
+                                <!--https://stackoverflow.com/questions/59302530/mediamanager-volume-control-for-xamarin-forms-->
+                                <Slider x:Name="VolumeSlider"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    Maximum="1" Minimum="0" Value="1"
+                                    MaximumTrackColor="{StaticResource SecondaryColour}"
+                                    MinimumTrackColor="{StaticResource Accent}"
+                                    ThumbColor="{StaticResource PrimaryColour}"
+                                    Margin="4"
+                                    ValueChanged="VolumeSlider_ValueChanged"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         Margin="20,0,0,0">
+                                <Label Text="On-Demand data"
+                                       TextColor="{StaticResource SecondaryTextColour}"
+                                       FontFamily="MainFont"
+                                       VerticalOptions="Center"/>
+                                <Switch HorizontalOptions="EndAndExpand"
+                                        x:Name="OnDemandDataSwitch"
+                                        Margin="0,0,20,0"
+                                        IsToggled="{Binding IsOnDemandDataToggled}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+
+                </TableRoot>
+            </TableView>
+
+            <Button Text="Play sample audio"
+                                        Style="{StaticResource PrimaryButton}"
+                                        x:Name="SampleBtn"
+                                        Clicked="SampleBtn_Clicked"/>
+
+        </StackLayout>
     </ContentView.Content>
 </ContentView>
