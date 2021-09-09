@@ -2,58 +2,98 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
     x:Class="PerformanceAI.Views.NewWorkouts"
-    Title="New Workout">
+    BackgroundColor="{StaticResource ViewBackgroundColor}"
+    NavigationPage.HasNavigationBar="False"
+    >
     <ContentPage.Content>
-        <StackLayout>
 
-            <StackLayout
-                Orientation="Horizontal"
-                HorizontalOptions="Center"
-                Spacing="10"
-                Margin="10">
-                <Button
-                    x:Name="ScanButton"
-                    Clicked="ScanButton_Clicked"
-                    Text="Scan for devices"
-                    BackgroundColor="green"
-                    TextColor="white"
-                    Padding="10"
-                    FontAttributes="Bold"/>
-                <Button
-                    x:Name="StatusButton"
-                    Clicked="StatusButton_Clicked"
-                    Text="Bluetooth Status"
-                    TextColor="White"
-                    Padding="10"
-                    BackgroundColor="Blue"/>
-            </StackLayout>
+        <AbsoluteLayout Margin="{StaticResource PageMargin}">
 
             <StackLayout>
-                <ListView
-                    x:Name="DevicesListView"
-                    ItemSelected="DevicesListView_ItemSelected"
-                    ItemsSource="{Binding devices}"
-                    SeparatorVisibility="Default"
-                    SeparatorColor="red">
+
+                <Label Text="SENSORS"
+                   Style="{StaticResource H1}"/>
+
+                <StackLayout>
+                    <Label Text="CONNECTED SENSORS"
+                   Style="{StaticResource H2}"/>
+                    <BoxView HeightRequest="1"
+                     Margin="0,0,0,20"
+                     Color="#f2f2f2"/>
+                    <ListView
+                        x:Name="ConnectedSensorsListView"
+                        SeparatorVisibility="None"
+                        BackgroundColor="{StaticResource ViewBackgroundColor}"
+                        HeightRequest="150">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-		      	                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">	
-			     	                    <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
-			        	                    <Label
-			        		                    YAlign="Center" 
-			        		                    Font="Medium"
-			        		                    TextColor="Red"
-                                                Text="{Binding Name}" />
-			                            </StackLayout>
-		                             </StackLayout>
+                                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                        <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                            <Label
+                                            Text="{Binding Name}"
+                                            FontFamily="MainFont"
+                                            TextColor="#f2f2f2" />
+                                        </StackLayout>
+                                    </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                </ListView>
+                    </ListView>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="NEW SENSORS"
+                   Style="{StaticResource H2}"/>
+                    <BoxView HeightRequest="1"
+                     Margin="0,0,0,20"
+                     Color="#f2f2f2"/>
+                    <ListView
+                        x:Name="SensorsListView"
+                        ItemSelected="SensorsListView_ItemSelected"
+                        SeparatorVisibility="None"
+                        BackgroundColor="{StaticResource ViewBackgroundColor}"
+                        HeightRequest="150">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                        <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                            <Label
+                                            Text="{Binding Name}"
+                                            FontFamily="MainFont"
+                                            TextColor="#f2f2f2" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+                <!--Button at the bottom
+            if no sensor is added, display alert confirming if they wish to proceed with no sensors attached-->
+                <Button x:Name="NextButton"
+                    Text="Next"
+                    Clicked="NextButton_Clicked"
+                    Style="{StaticResource PrimaryButton}"
+                    VerticalOptions="EndAndExpand"/>
             </StackLayout>
 
-        </StackLayout>
+            <StackLayout IsVisible="{Binding IsConnectingToChosenSensor}"
+                         Padding="12"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                         AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                <ActivityIndicator IsRunning="{Binding IsConnectingToChosenSensor}"
+                                   Color ="{StaticResource PrimaryColour}"/>
+                <Label Text="ConnectingToSensor..."
+                       HorizontalOptions="Center"
+                       Style="{StaticResource H3}"/>
+            </StackLayout>
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

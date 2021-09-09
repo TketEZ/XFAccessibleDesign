@@ -31,6 +31,7 @@
 
         <!-- H3 -->
         <Color x:Key="SecondaryTextColour">#f2f2f2</Color>
+        <x:Double x:Key="H3FontSize">20</x:Double>
 
         <!-- Primary Button -->
         <Color x:Key="PrimaryButtonBgColour">#30e5d0</Color>
@@ -66,6 +67,14 @@
             <Setter Property="HorizontalOptions" Value="Start" />
             <Setter Property="FontSize" Value="{StaticResource H2FontSize}"/>
             <Setter Property="FontFamily" Value="MainFont"/>
+        </Style>
+
+        <!-- Label - H3 -->
+        <Style x:Key="H3" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource SecondaryTextColour}"/>
+            <Setter Property="FontSize" Value="{StaticResource H3FontSize}"/>
+            <Setter Property="FontFamily" Value="MainFont"/>
+            <Setter Property="VerticalTextAlignment" Value="Center" />
         </Style>
 
         <!-- Picker -->
